@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
-const slotsRouter = require("./Routes/SlotsRoutes");
+const appointmentRouter = require("./Routes/AppointmentRoute");
 const cors = require("cors");
 const app = express();
 app.use(express.json());
@@ -17,7 +17,7 @@ mongoose.connect(mongoUrl, {
 
 app.use(cors());
 
-app.use(slotsRouter);
+app.use(appointmentRouter);
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
